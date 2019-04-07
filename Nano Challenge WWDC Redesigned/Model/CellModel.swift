@@ -12,8 +12,11 @@ struct Cell {
     let image: String
     let speaker: String
     let extraSpeaker: String
-    let session: Session
+    let startingTime: String
+    let endingTime: String
+    let location: String
     let title: String
+    let sessionNumber: Int
     let track: TrackType
     let favorite: Bool
 }

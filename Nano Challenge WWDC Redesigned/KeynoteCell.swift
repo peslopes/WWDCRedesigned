@@ -9,6 +9,17 @@
 import UIKit
 
 class KeynoteCell: UITableViewCell {
+    
+    @IBOutlet weak var speakerImage: UIImageView!
+    @IBOutlet weak var speakerName: UILabel!
+    @IBOutlet weak var extraSpeakers: UILabel!
+    @IBOutlet weak var TimeAndPlace: UILabel!
+    @IBOutlet weak var keynoteTitle: UILabel!
+    @IBOutlet weak var sessionNumber: UILabel!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
