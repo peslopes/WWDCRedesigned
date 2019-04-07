@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A55E56225A4720002ABFA1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A55E55225A4720002ABFA1 /* Session.swift */; };
+		04A55E58225A5255002ABFA1 /* KeynoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A55E57225A5255002ABFA1 /* KeynoteCell.swift */; };
 		33204CD32257D6C200AB82AA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33204CB52257D6C200AB82AA /* SF-Pro-Display-Thin.otf */; };
 		33204CD42257D6C200AB82AA /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33204CB62257D6C200AB82AA /* SF-Pro-Display-SemiboldItalic.otf */; };
 		33204CD52257D6C200AB82AA /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33204CB72257D6C200AB82AA /* SF-Pro-Text-Heavy.otf */; };
@@ -79,6 +81,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A55E55225A4720002ABFA1 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		04A55E57225A5255002ABFA1 /* KeynoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeynoteCell.swift; path = "Nano Challenge WWDC Redesigned/KeynoteCell.swift"; sourceTree = SOURCE_ROOT; };
 		33204CB52257D6C200AB82AA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		33204CB62257D6C200AB82AA /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		33204CB72257D6C200AB82AA /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				33CF98FE2257CDF400448A50 /* CellModel.swift */,
 				33CF99032257CF8B00448A50 /* TrackType.swift */,
 				33204D312257DFF900AB82AA /* EventData.swift */,
+				04A55E55225A4720002ABFA1 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 		33CF99012257CE1D00448A50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04A55E57225A5255002ABFA1 /* KeynoteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,9 +460,11 @@
 				33CF98EE2257C2DF00448A50 /* ViewController.swift in Sources */,
 				33CF99042257CF8B00448A50 /* TrackType.swift in Sources */,
 				33204D322257DFF900AB82AA /* EventData.swift in Sources */,
+				04A55E58225A5255002ABFA1 /* KeynoteCell.swift in Sources */,
 				33CF98EC2257C2DF00448A50 /* AppDelegate.swift in Sources */,
 				33CF98FF2257CDF400448A50 /* CellModel.swift in Sources */,
 				33204D302257DEE200AB82AA /* CellController.swift in Sources */,
+				04A55E56225A4720002ABFA1 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

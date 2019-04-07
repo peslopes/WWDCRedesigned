@@ -9,5 +9,5 @@
 import Foundation
 
 struct EventData {
-    let keynotesPerHour: [Date:Int]
+    let sessions: [Session] //this array should be organized in chronological order
 }
