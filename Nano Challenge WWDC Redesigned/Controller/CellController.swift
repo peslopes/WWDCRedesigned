@@ -15,7 +15,6 @@ class CellController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     var keynotes: [Cell] = [
         Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false),
         Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false)
@@ -25,9 +24,9 @@ class CellController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         eventData = EventData(sessions:
-            [Session(startingHour: 1900, day: WeekDay.Monday, keynotes: 2),
-             Session(startingHour: 2000 , day: WeekDay.Monday, keynotes: 0),
-             Session(startingHour: 1400,day: WeekDay.Tuesday, keynotes: 0)])
+            [Session(startingHour: "1900", day: WeekDay.Monday, keynotes: 2),
+             Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: 0),
+             Session(startingHour: "1400",day: WeekDay.Tuesday, keynotes: 0)])
         
     }
 }
@@ -59,9 +58,12 @@ extension CellController: UITableViewDataSource {
         return eventData.sessions[section].keynotes
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let info = eventData.sessions[section]
+        let title = "\(info.day), \(info.startingHour.prefix(2)):\(info.startingHour.suffix(2))"
+        
+        return title
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? KeynoteCell else {
