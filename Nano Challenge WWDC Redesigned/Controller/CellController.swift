@@ -23,6 +23,7 @@ class CellController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         eventData = EventData(sessions:
             [Session(startingHour: "1900", day: WeekDay.Monday, keynotes: 2),
              Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: 0),
@@ -99,5 +100,14 @@ extension CellController: UITableViewDataSource {
         cell.trackColor.backgroundColor = trackColor(trackType: event.track)
         
         return cell
+    }
+}
+
+//MARK: - Setting up the delegate of the function
+extension CellController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "SFProText-Semibold", size: 13)
+        header.textLabel?.textColor = UIColor(red: 0.556, green: 0.556, blue: 0.576, alpha: 1)
     }
 }
