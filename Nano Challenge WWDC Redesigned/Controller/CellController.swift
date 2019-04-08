@@ -17,8 +17,8 @@ class CellController: UIViewController {
     
     
     var keynotes: [Cell] = [
-        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: "+2", startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false),
-        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: "", startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false)
+        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false),
+        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false)
     ]
     
     override func viewDidLoad() {
@@ -59,15 +59,38 @@ extension CellController: UITableViewDataSource {
         return eventData.sessions[section].keynotes
     }
     
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? KeynoteCell else {
             return UITableViewCell()
         }
         let event = keynotes[indexPath.row]
         
-        cell.speakerName.text = event.speaker
+        //setting the name of the speaker and the number of extra guests and divigint them
+        if event.extraSpeaker == 0 {
+            //putting each word on the speaker name in one index of names array
+            let names: [String] = event.speaker.components(separatedBy: " ")
+            if names.count != 1 {
+                cell.speakerName.text = names[0]
+                cell.extraSpeakers.text = names[1]
+            }
+            else {
+                cell.speakerName.text = event.speaker
+                cell.extraSpeakers.text = ""
+            }
+        }
+        else {
+            cell.speakerName.text = event.speaker
+            cell.extraSpeakers.text = "+\(event.extraSpeaker)"
+        }
+        
+        
+        //cell.speakerName.text = event.speaker
         cell.speakerImage.image = UIImage(named: event.image)
-        cell.extraSpeakers.text = event.extraSpeaker
+        //cell.extraSpeakers.text = "\(event.extraSpeaker)"
         cell.TimeAndPlace.text = "\(event.startingTime.prefix(2)):\(event.startingTime.suffix(2)) - \(event.endingTime.prefix(2)):\(event.endingTime.suffix(2)) - \(event.location)"
         cell.keynoteTitle.text = event.title
         cell.sessionNumber.text = "Session \(event.sessionNumber)"

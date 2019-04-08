@@ -11,7 +11,7 @@ import Foundation
 struct Cell {
     let image: String
     let speaker: String
-    let extraSpeaker: String
+    let extraSpeaker: Int
     let startingTime: String
     let endingTime: String
     let location: String
