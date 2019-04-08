@@ -16,6 +16,7 @@ class KeynoteCell: UITableViewCell {
     @IBOutlet weak var TimeAndPlace: UILabel!
     @IBOutlet weak var keynoteTitle: UILabel!
     @IBOutlet weak var sessionNumber: UILabel!
+    @IBOutlet weak var trackColor: UIView!
     
     
     

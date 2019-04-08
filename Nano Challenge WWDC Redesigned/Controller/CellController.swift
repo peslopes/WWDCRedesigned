@@ -32,6 +32,23 @@ class CellController: UIViewController {
     }
 }
 
+//MARK: - Function that maps a track type to a certain color
+extension CellController {
+    func trackColor(trackType: TrackType) -> UIColor{
+        switch trackType {
+        case .devTrack:
+            return UIColor.red
+        case .designTrack:
+            return UIColor.green
+        case .iOSTrack:
+            return UIColor.blue
+        case .UXTrack:
+            return UIColor.yellow
+        }
+    }
+}
+
+
 //MARK: - Source of data of the table view
 extension CellController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,6 +71,7 @@ extension CellController: UITableViewDataSource {
         cell.TimeAndPlace.text = "\(event.startingTime.prefix(2)):\(event.startingTime.suffix(2)) - \(event.endingTime.prefix(2)):\(event.endingTime.suffix(2)) - \(event.location)"
         cell.keynoteTitle.text = event.title
         cell.sessionNumber.text = "Session \(event.sessionNumber)"
+        cell.trackColor.backgroundColor = trackColor(trackType: event.track)
         
         return cell
     }
