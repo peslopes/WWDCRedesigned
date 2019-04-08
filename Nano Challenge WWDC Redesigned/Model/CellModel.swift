@@ -19,4 +19,9 @@ struct Cell {
     let sessionNumber: Int
     let track: TrackType
     let favorite: Bool
+    let eventDescription: String
+    let imageMap: String
+    let speakerFunction: String
+    let speakerCompany: String
+    let speakerDescription: String
 }
