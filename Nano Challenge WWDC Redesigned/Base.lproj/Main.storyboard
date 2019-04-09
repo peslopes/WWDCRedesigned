@@ -167,7 +167,7 @@
                                                             </constraints>
                                                             <state key="normal" backgroundImage="Star Open"/>
                                                             <connections>
-                                                                <action selector="starButtonClicked:" destination="Faf-Nh-lGw" eventType="touchUpInside" id="puA-sO-Pjf"/>
+                                                                <action selector="favoritePressed:" destination="Faf-Nh-lGw" eventType="touchUpInside" id="1Co-po-SjP"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -211,7 +211,6 @@
                                             <outlet property="sessionNumber" destination="6Yr-85-fyY" id="QaV-Y9-yGr"/>
                                             <outlet property="speakerImage" destination="2po-vS-w24" id="G81-WJ-JFc"/>
                                             <outlet property="speakerName" destination="Izb-DY-dMG" id="cNM-4S-F8i"/>
-                                            <outlet property="starButtonOutlet" destination="Mct-7W-Z0s" id="sQI-Sa-JGJ"/>
                                             <outlet property="trackColor" destination="MKF-TS-yAo" id="BVK-V1-RKw"/>
                                             <segue destination="Yoa-jK-Awe" kind="show" id="a0m-pe-POm"/>
                                         </connections>

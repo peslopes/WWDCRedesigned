@@ -91,6 +91,8 @@ extension CellController: UITableViewDataSource {
         }
         
         
+        cell.delegate = self
+        
         //cell.speakerName.text = event.speaker
         cell.speakerImage.image = UIImage(named: event.image)
         //cell.extraSpeakers.text = "\(event.extraSpeaker)"
@@ -101,17 +103,25 @@ extension CellController: UITableViewDataSource {
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        <#code#>
-//    }
 }
 
 //MARK: - Setting up the delegate of the function
 extension CellController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
+        header.backgroundView?.backgroundColor = UIColor(red: 0.976, green: 0.976, blue: 0.976, alpha: 1)
         header.textLabel?.font = UIFont(name: "SFProText-Semibold", size: 13)
         header.textLabel?.textColor = UIColor(red: 0.556, green: 0.556, blue: 0.576, alpha: 1)
+    }
+}
+
+//MARK: - The delegate from the favorite button
+protocol FavoriteDelegate: class { //delegates the managing of a button to another class
+    func buttonDidPress(_ button: UIButton)
+}
+
+extension CellController: FavoriteDelegate {
+    func buttonDidPress(_ button: UIButton) {
+        
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class KeynoteCell: UITableViewCell {
     
+    weak var delegate: FavoriteDelegate?
     @IBOutlet weak var speakerImage: UIImageView!
     @IBOutlet weak var speakerName: UILabel!
     @IBOutlet weak var extraSpeakers: UILabel!
@@ -17,9 +18,9 @@ class KeynoteCell: UITableViewCell {
     @IBOutlet weak var keynoteTitle: UILabel!
     @IBOutlet weak var sessionNumber: UILabel!
     @IBOutlet weak var trackColor: UIView!
-    @IBOutlet weak var starButtonOutlet: UIButton!
     
-    @IBAction func starButtonClicked(_ sender: Any) {
+    @IBAction func favoritePressed(_ sender: UIButton) {
+        delegate?.buttonDidPress(sender)
     }
     
     override func awakeFromNib() {

@@ -273,7 +273,6 @@
 			children = (
 				33204CB32257D68600AB82AA /* Fonts */,
 				33CF98EA2257C2DF00448A50 /* Nano Challenge WWDC Redesigned */,
-				33CF98E92257C2DF00448A50 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,6 +282,7 @@
 				33CF98E82257C2DF00448A50 /* Nano Challenge WWDC Redesigned.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		33CF98EA2257C2DF00448A50 /* Nano Challenge WWDC Redesigned */ = {
@@ -295,6 +295,7 @@
 				33CF99002257CE0200448A50 /* Support */,
 				33CF98F42257C2E100448A50 /* LaunchScreen.storyboard */,
 				33CF98EF2257C2DF00448A50 /* Main.storyboard */,
+				33CF98E92257C2DF00448A50 /* Products */,
 			);
 			path = "Nano Challenge WWDC Redesigned";
 			sourceTree = "<group>";
