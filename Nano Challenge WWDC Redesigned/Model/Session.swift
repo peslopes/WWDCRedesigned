@@ -19,5 +19,5 @@ enum WeekDay {
 struct Session {
     let startingHour: String //to be used with 4 digits like military time
     let day: WeekDay
-    let keynotes: Int
+    let keynotes: [Cell]
 }

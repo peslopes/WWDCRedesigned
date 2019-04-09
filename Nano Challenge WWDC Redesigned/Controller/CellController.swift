@@ -16,18 +16,19 @@ class CellController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var keynotes: [Cell] = [
-        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "jbfejbfi ububdiudhfiue uehdoeuhfouehfou houhfouhou ehfoueh ouehfoueh ouehfoue hfouehou eh fouehfouehfoehfouhfouhefouehfouheouhou hou hefouhe ouheou h ouheouh ouhouheo hoeuh o hou houfheoufheoufheou ho uheoufheoufheoufhoeufhoeuhfohoeh dgsidygidy dhiushdiushdiushdiu hushdiushdiushdisudhsiudhiusd usdhsiudhisudhisud sidhsiudhsiuhdiushdiush hdiushdiushdiushdiu usdhsiudh", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
-        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell)
-    ]
+
+        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
+        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "FrankDoepke", speaker: "Alp Yucebilgin", extraSpeaker: 0, startingTime: "2000", endingTime: "2030", location: "Hall 3", title: "Metal Shader Debugging and Profilling", sessionNumber: 608, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Animation", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         eventData = EventData(sessions:
-            [Session(startingHour: "1900", day: WeekDay.Monday, keynotes: 2),
-             Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: 0),
-             Session(startingHour: "1400",day: WeekDay.Tuesday, keynotes: 0)])
+            [Session(startingHour: "1900", day: WeekDay.Monday, keynotes: [keynotes[0],keynotes[1]]),
+             Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: [keynotes[2]]),
+             Session(startingHour: "1400",day: WeekDay.Tuesday, keynotes: [])])
         
     }
     
@@ -66,7 +67,7 @@ extension CellController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventData.sessions[section].keynotes
+        return eventData.sessions[section].keynotes.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -80,8 +81,7 @@ extension CellController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? KeynoteCell else {
             return UITableViewCell()
         }
-        let event = keynotes[indexPath.row]
-        
+        let event = eventData.sessions[indexPath.section].keynotes[indexPath.row]
         //setting the name of the speaker and the number of extra guests and divigint them
         if event.extraSpeaker == 0 {
             //putting each word on the speaker name in one index of names array
