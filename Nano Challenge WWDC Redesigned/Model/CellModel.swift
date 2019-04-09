@@ -24,4 +24,13 @@ struct Cell {
     let speakerFunction: String
     let speakerCompany: String
     let speakerDescription: String
+    let cellType: CellType
+}
+
+enum CellType {
+    case aboutEventCell
+    case keynoteCell
+    case buttonCell
+    case imagemMapCell
+    case aboutSpeakerCell
 }

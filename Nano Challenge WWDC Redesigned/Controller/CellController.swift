@@ -16,8 +16,8 @@ class CellController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var keynotes: [Cell] = [
-        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla"),
-        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla")
+        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
+        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell)
     ]
     
     override func viewDidLoad() {
@@ -29,6 +29,16 @@ class CellController: UIViewController {
              Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: 0),
              Session(startingHour: "1400",day: WeekDay.Tuesday, keynotes: 0)])
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let keynote = sender as? Cell {
+            if segue.identifier == "goToDetails" {
+                guard let detailsViewController = segue.destination as? DetailsViewController else { return }
+                detailsViewController.keynote = keynote
+                
+            }
+        }
     }
 }
 
@@ -102,6 +112,10 @@ extension CellController: UITableViewDataSource {
         cell.trackColor.backgroundColor = trackColor(trackType: event.track)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToDetails", sender: keynotes[indexPath.row])
     }
 }
 

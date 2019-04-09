@@ -212,7 +212,7 @@
                                             <outlet property="speakerImage" destination="2po-vS-w24" id="G81-WJ-JFc"/>
                                             <outlet property="speakerName" destination="Izb-DY-dMG" id="cNM-4S-F8i"/>
                                             <outlet property="trackColor" destination="MKF-TS-yAo" id="BVK-V1-RKw"/>
-                                            <segue destination="Yoa-jK-Awe" kind="show" id="a0m-pe-POm"/>
+                                            <segue destination="Yoa-jK-Awe" kind="show" identifier="goToDetails" id="a0m-pe-POm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -281,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="-559.15178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="ehG-Iy-sJ6">
             <objects>
-                <viewController id="Yoa-jK-Awe" sceneMemberID="viewController">
+                <viewController id="Yoa-jK-Awe" customClass="DetailsViewController" customModule="Nano_Challenge_WWDC_Redesigned" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Rd-8i-00p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,6 +507,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3o1-J8-6Fo"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="B6y-8u-Bdv" id="a3j-KM-8xr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afZ-bb-kUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
