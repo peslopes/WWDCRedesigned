@@ -16,7 +16,7 @@ class CellController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var keynotes: [Cell] = [
-        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
+        Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "jbfejbfi ububdiudhfiue uehdoeuhfouehfou houhfouhou ehfoueh ouehfoueh ouehfoue hfouehou eh fouehfouehfoehfouhfouhefouehfouheouhou hou hefouhe ouheou h ouheouh ouhouheo hoeuh o hou houfheoufheoufheou ho uheoufheoufheoufhoeufhoeuhfohoeh dgsidygidy dhiushdiushdiushdiu hushdiushdiushdisudhsiudhiusd usdhsiudhisudhisud sidhsiudhsiuhdiushdiush hdiushdiushdiushdiu usdhsiudh", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
         Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell)
     ]
     

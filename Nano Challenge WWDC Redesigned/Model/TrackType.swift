@@ -13,4 +13,20 @@ enum TrackType {
     case designTrack
     case iOSTrack
     case UXTrack
+    
+    var description: String {
+        switch(self){
+            
+        case .devTrack:
+            return "Developer Track"
+        case .designTrack:
+            return "Design Track"
+        case .iOSTrack:
+            return "iOS Track"
+        case .UXTrack:
+            return "UX Track"
+        @unknown default:
+            return "ERROR"
+        }
+    }
 }
