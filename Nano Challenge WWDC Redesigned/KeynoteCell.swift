@@ -22,7 +22,6 @@ class KeynoteCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         speakerImage.layer.cornerRadius = 22.0
-        self.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

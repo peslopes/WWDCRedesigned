@@ -101,6 +101,10 @@ extension CellController: UITableViewDataSource {
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        <#code#>
+//    }
 }
 
 //MARK: - Setting up the delegate of the function
