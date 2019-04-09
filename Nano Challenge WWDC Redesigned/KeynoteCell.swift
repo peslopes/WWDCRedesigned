@@ -11,6 +11,7 @@ import UIKit
 class KeynoteCell: UITableViewCell {
     
     weak var delegate: FavoriteDelegate?
+    var index: Int?
     @IBOutlet weak var speakerImage: UIImageView!
     @IBOutlet weak var speakerName: UILabel!
     @IBOutlet weak var extraSpeakers: UILabel!
@@ -20,7 +21,13 @@ class KeynoteCell: UITableViewCell {
     @IBOutlet weak var trackColor: UIView!
     
     @IBAction func favoritePressed(_ sender: UIButton) {
-        delegate?.buttonDidPress(sender)
+        let favoriteStatus = delegate?.buttonDidPress(sender, index: index!)
+        if favoriteStatus! {
+            sender.setBackgroundImage(UIImage(named: "Star Closed"), for: .normal)
+        }
+        else {
+            sender.setBackgroundImage(UIImage(named: "Star Open"), for: .normal)
+        }
     }
     
     override func awakeFromNib() {

@@ -90,7 +90,7 @@ extension CellController: UITableViewDataSource {
             cell.extraSpeakers.text = "+\(event.extraSpeaker)"
         }
         
-        
+        cell.index = indexPath.row
         cell.delegate = self
         
         //cell.speakerName.text = event.speaker
@@ -117,11 +117,13 @@ extension CellController: UITableViewDelegate {
 
 //MARK: - The delegate from the favorite button
 protocol FavoriteDelegate: class { //delegates the managing of a button to another class
-    func buttonDidPress(_ button: UIButton)
+    func buttonDidPress(_ button: UIButton, index: Int) -> Bool
 }
 
 extension CellController: FavoriteDelegate {
-    func buttonDidPress(_ button: UIButton) {
+    func buttonDidPress(_ button: UIButton, index: Int) -> Bool{
+        keynotes[index].favorite = !keynotes[index].favorite
         
+        return keynotes[index].favorite
     }
 }

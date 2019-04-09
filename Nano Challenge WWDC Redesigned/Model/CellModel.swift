@@ -18,7 +18,7 @@ struct Cell {
     let title: String
     let sessionNumber: Int
     let track: TrackType
-    let favorite: Bool
+    var favorite: Bool
     let eventDescription: String
     let imageMap: String
     let speakerFunction: String
