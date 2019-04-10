@@ -42,13 +42,15 @@ class DetailsViewController: UIViewController {
     func trackColor(trackType: TrackType) -> UIColor{
         switch trackType {
         case .devTrack:
-            return UIColor.red
+            return UIColor(red: 0.960, green: 0.529, blue: 0.098, alpha: 1)
         case .designTrack:
-            return UIColor.green
-        case .iOSTrack:
-            return UIColor.blue
-        case .UXTrack:
-            return UIColor.yellow
+            return UIColor(red: 0.635, green: 0.317, blue: 0.956, alpha: 1)
+        case .featuredTrack:
+            return UIColor(red: 0.870, green: 0.729, blue: 0.411, alpha: 1)
+        case .frameworksTrack:
+            return UIColor(red: 0.172, green: 0.921, blue: 0.2, alpha: 1)
+        case .graphicsGamesTrack:
+            return UIColor(red: 0.078, green: 0.870, blue: 0.717, alpha: 1)
         }
     }
 
@@ -78,7 +80,7 @@ extension DetailsViewController: UITableViewDataSource {
             
             return cell
             
-
+            
         case .keynoteCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? KeynoteCell else {
                 return UITableViewCell()
