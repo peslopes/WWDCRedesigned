@@ -84,7 +84,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lix-pl-QBo">
-                                                    <rect key="frame" x="0.0" y="8" width="382" height="100"/>
+                                                    <rect key="frame" x="0.0" y="6" width="382" height="100"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2xi-Ky-9ft">
                                                             <rect key="frame" x="28" y="10" width="48.5" height="80"/>
@@ -195,8 +195,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="lix-pl-QBo" firstAttribute="top" secondItem="hxS-HK-qbZ" secondAttribute="top" constant="8" id="Mcn-Rq-iuO"/>
-                                                <constraint firstAttribute="bottom" secondItem="lix-pl-QBo" secondAttribute="bottom" constant="8" id="OnH-PD-zsi"/>
+                                                <constraint firstItem="lix-pl-QBo" firstAttribute="top" secondItem="hxS-HK-qbZ" secondAttribute="top" constant="6" id="Mcn-Rq-iuO"/>
+                                                <constraint firstAttribute="bottom" secondItem="lix-pl-QBo" secondAttribute="bottom" constant="6" id="OnH-PD-zsi"/>
                                                 <constraint firstItem="lix-pl-QBo" firstAttribute="leading" secondItem="hxS-HK-qbZ" secondAttribute="leading" id="Ygm-G8-aol"/>
                                                 <constraint firstAttribute="trailing" secondItem="lix-pl-QBo" secondAttribute="trailing" id="qu6-Nu-NVn"/>
                                             </constraints>

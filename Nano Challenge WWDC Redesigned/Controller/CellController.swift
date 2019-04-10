@@ -89,6 +89,13 @@ extension CellController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? KeynoteCell else {
             return UITableViewCell()
         }
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowRadius = 10
+        
+        cell.layer.shadowOpacity = 0.20
+        cell.layer.masksToBounds = false;
+        cell.clipsToBounds = false;
         let event = eventData.sessions[indexPath.section].keynotes[indexPath.row]
         //setting the name of the speaker and the number of extra guests and divigint them
         //putting each word on the speaker name in one index of names array
