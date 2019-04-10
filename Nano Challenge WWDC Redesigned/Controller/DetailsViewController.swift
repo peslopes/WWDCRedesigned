@@ -76,7 +76,7 @@ extension DetailsViewController: UITableViewDataSource {
             cell.trackTypeLabel.textColor = trackColor(trackType: cellModel.track)
             cell.sessionNumberLabel.text = "Session \(cellModel.sessionNumber)"
             cell.trackTypeColor.backgroundColor = trackColor(trackType: cellModel.track)
-            cell.dateAndLocalLabel.text = "\(cellModel.startingTime)"
+            cell.dateAndLocalLabel.text = "\(cellModel.startingTime.prefix(2)):\(cellModel.startingTime.suffix(2)) - \(cellModel.endingTime.prefix(2)):\(cellModel.endingTime.suffix(2)) - \(cellModel.location)"
             
             return cell
             
