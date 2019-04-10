@@ -641,8 +641,8 @@
                                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeI-hh-Ya3">
-                                                            <rect key="frame" x="24" y="133" width="334" height="122"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeI-hh-Ya3">
+                                                            <rect key="frame" x="16" y="119.5" width="398" height="122"/>
                                                             <string key="text">Ted Kremenek has had a remarkable career at Pixar Animation Studios where, as Director of Photography for Lighting, she gets to interweave her passions for art and math, science and code to help bring Pixar’s fantastical world to life.</string>
                                                             <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -670,12 +670,13 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="QIt-A7-8xv" firstAttribute="leading" secondItem="fX4-t9-hYj" secondAttribute="leading" constant="16" id="44H-wo-ZKY"/>
-                                                        <constraint firstItem="KeI-hh-Ya3" firstAttribute="top" secondItem="W3N-sj-4Bi" secondAttribute="bottom" constant="25" id="5JI-EL-6xt"/>
-                                                        <constraint firstAttribute="height" constant="290.5" id="7t8-X4-lGw"/>
+                                                        <constraint firstItem="KeI-hh-Ya3" firstAttribute="top" secondItem="W3N-sj-4Bi" secondAttribute="bottom" constant="11" id="5JI-EL-6xt"/>
                                                         <constraint firstItem="1dT-Nm-DlJ" firstAttribute="leading" secondItem="Ldw-Ce-kfz" secondAttribute="trailing" constant="15" id="Ddx-9S-QeV"/>
                                                         <constraint firstItem="W3N-sj-4Bi" firstAttribute="leading" secondItem="fX4-t9-hYj" secondAttribute="leading" constant="76" id="EjU-nU-xVR"/>
                                                         <constraint firstItem="2TW-Pg-S7F" firstAttribute="top" secondItem="1dT-Nm-DlJ" secondAttribute="bottom" constant="2" id="G2w-xN-NND"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="JVg-hW-b3H"/>
                                                         <constraint firstItem="Ldw-Ce-kfz" firstAttribute="top" secondItem="QIt-A7-8xv" secondAttribute="bottom" constant="28" id="R1g-WZ-4fT"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="W3d-Ef-PjS"/>
                                                         <constraint firstItem="2TW-Pg-S7F" firstAttribute="leading" secondItem="Ldw-Ce-kfz" secondAttribute="trailing" constant="15" id="YAJ-20-YtH"/>
                                                         <constraint firstItem="1dT-Nm-DlJ" firstAttribute="top" secondItem="QIt-A7-8xv" secondAttribute="bottom" constant="28" id="Zre-XN-mft"/>
                                                         <constraint firstItem="Ldw-Ce-kfz" firstAttribute="leading" secondItem="fX4-t9-hYj" secondAttribute="leading" constant="16" id="eYH-ly-SZ4"/>
@@ -683,6 +684,7 @@
                                                         <constraint firstItem="QIt-A7-8xv" firstAttribute="top" secondItem="fX4-t9-hYj" secondAttribute="top" constant="8" id="jWh-Kb-OvR"/>
                                                         <constraint firstAttribute="trailing" secondItem="KeI-hh-Ya3" secondAttribute="trailing" id="oIP-Ob-epb"/>
                                                         <constraint firstItem="KeI-hh-Ya3" firstAttribute="leading" secondItem="fX4-t9-hYj" secondAttribute="leading" constant="16" id="qa7-cz-iiI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="KeI-hh-Ya3" secondAttribute="bottom" constant="49" id="s24-yb-Q8i"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
