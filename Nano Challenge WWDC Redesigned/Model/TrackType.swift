@@ -11,8 +11,9 @@ import Foundation
 enum TrackType {
     case devTrack
     case designTrack
-    case iOSTrack
-    case UXTrack
+    case featuredTrack
+    case frameworksTrack
+    case graphicsGamesTrack
     
     var description: String {
         switch(self){
@@ -21,12 +22,12 @@ enum TrackType {
             return "Developer Track"
         case .designTrack:
             return "Design Track"
-        case .iOSTrack:
-            return "iOS Track"
-        case .UXTrack:
-            return "UX Track"
-        @unknown default:
-            return "ERROR"
+        case .featuredTrack:
+            return "Featured Track"
+        case .frameworksTrack:
+            return "Frameworks Track"
+        case .graphicsGamesTrack:
+            return "Graphics and Games Track"
         }
     }
 }

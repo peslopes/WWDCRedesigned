@@ -18,17 +18,23 @@ class CellController: UIViewController {
     var keynotes: [Cell] = [
 
         Cell(image: "GeoffC", speaker: "Geoff C.", extraSpeaker: 2, startingTime: "1900", endingTime: "1940", location: "Hall 2", title: "Automating App Store Connect", sessionNumber: 303, track: TrackType.devTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of something", speakerCompany: "Apple Inc.", speakerDescription: "blablabla", cellType: .keynoteCell),
-        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
-        Cell(image: "FrankDoepke", speaker: "Alp Yucebilgin", extraSpeaker: 0, startingTime: "2000", endingTime: "2030", location: "Hall 3", title: "Metal Shader Debugging and Profilling", sessionNumber: 608, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Animation", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell)]
+        Cell(image: "FrankDoepke", speaker: "Frank Doepke", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 1", title: "Vision with Core ML", sessionNumber: 717, track: TrackType.featuredTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Photography", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "AlpYucebilgin", speaker: "Alp Yucebilgin", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Hall 3", title: "Metal Shader Debugging and Profilling", sessionNumber: 608, track: TrackType.featuredTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Director of Animation", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "JamesVest", speaker: "James Vest", extraSpeaker: 0, startingTime: "1900", endingTime: "1940", location: "Executive Ballroom", title: "VoiceOver: App Testing Beyond The Visuals", sessionNumber: 226, track: TrackType.designTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "RickB", speaker: "Rick Belamonte", extraSpeaker: 1, startingTime: "2000", endingTime: "2000", location: "Hall 2", title: "Getting to Know Swift Package Manager", sessionNumber: 441, track: TrackType.frameworksTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "WillLi", speaker: "Will Li", extraSpeaker: 1, startingTime: "2000", endingTime: "2030", location: "Hall 1", title: "Optimizing App Assets", sessionNumber: 227, track: TrackType.graphicsGamesTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Pixar Animation Studios", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "AnnaTikhonova", speaker: "Anna Tikhonova", extraSpeaker: 0, startingTime: "2000", endingTime: "2040", location: "Hall 3", title: "Metal for Accelerating Machine Learning", sessionNumber: 609, track: TrackType.featuredTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Default Company", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "ChrisM", speaker: "Chris Madelonovoas", extraSpeaker: 1, startingTime: "2100", endingTime: "2140", location: "Hall 2", title: "Advanced Debugging with Xcode and LLDB", sessionNumber: 412, track: TrackType.frameworksTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Default Company", speakerDescription: "Blablabla", cellType: .keynoteCell),
+        Cell(image: "MarionM", speaker: "Marion Madelonovoas", extraSpeaker: 1, startingTime: "2100", endingTime: "2140", location: "Hall 3", title: "Understanding ArKit Tracking and Detection", sessionNumber: 610, track: TrackType.featuredTrack, favorite: false, eventDescription: "blablabla", imageMap: "ExampleMap", speakerFunction: "Default Speaker", speakerCompany: "Default Company", speakerDescription: "Blablabla", cellType: .keynoteCell)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         eventData = EventData(sessions:
-            [Session(startingHour: "1900", day: WeekDay.Monday, keynotes: [keynotes[0],keynotes[1]]),
-             Session(startingHour: "2000" , day: WeekDay.Monday, keynotes: [keynotes[2]]),
-             Session(startingHour: "1400",day: WeekDay.Tuesday, keynotes: [])])
+            [Session(startingHour: "1900", day: WeekDay.Thursday, keynotes: [keynotes[0],keynotes[1],keynotes[2],keynotes[3]]),
+             Session(startingHour: "2000" , day: WeekDay.Thursday, keynotes: [keynotes[4],keynotes[5],keynotes[6]]),
+             Session(startingHour: "2100",day: WeekDay.Thursday, keynotes: [keynotes[7],keynotes[8]])])
         
     }
     
@@ -48,13 +54,15 @@ extension CellController {
     func trackColor(trackType: TrackType) -> UIColor{
         switch trackType {
         case .devTrack:
-            return UIColor.red
+            return UIColor(red: 0.960, green: 0.529, blue: 0.098, alpha: 1)
         case .designTrack:
-            return UIColor.green
-        case .iOSTrack:
-            return UIColor.blue
-        case .UXTrack:
-            return UIColor.yellow
+            return UIColor(red: 0.635, green: 0.317, blue: 0.956, alpha: 1)
+        case .featuredTrack:
+            return UIColor(red: 0.870, green: 0.729, blue: 0.411, alpha: 1)
+        case .frameworksTrack:
+            return UIColor(red: 0.172, green: 0.921, blue: 0.2, alpha: 1)
+        case .graphicsGamesTrack:
+            return UIColor(red: 0.078, green: 0.870, blue: 0.717, alpha: 1)
         }
     }
 }
@@ -83,21 +91,35 @@ extension CellController: UITableViewDataSource {
         }
         let event = eventData.sessions[indexPath.section].keynotes[indexPath.row]
         //setting the name of the speaker and the number of extra guests and divigint them
+        //putting each word on the speaker name in one index of names array
+        let names: [String] = event.speaker.components(separatedBy: " ")
         if event.extraSpeaker == 0 {
-            //putting each word on the speaker name in one index of names array
-            let names: [String] = event.speaker.components(separatedBy: " ")
             if names.count != 1 {
-                cell.speakerName.text = names[0]
-                cell.extraSpeakers.text = names[1]
+                //cell.speakerName.text = names[0]
+                if names[1].count < 7 {
+                    cell.speakerName.text = names[0]
+                    cell.extraSpeakers.text = names[1]
+                }
+                else {
+                    cell.speakerName.text = "\(names[0]) \(names[1].prefix(1))."
+                    cell.extraSpeakers.text = ""
+                }
+                
             }
             else {
-                cell.speakerName.text = event.speaker
+                cell.speakerName.text = "\(names[0])"
                 cell.extraSpeakers.text = ""
             }
         }
         else {
-            cell.speakerName.text = event.speaker
-            cell.extraSpeakers.text = "+\(event.extraSpeaker)"
+            if names[0].count < 7 {
+                cell.speakerName.text = "\(names[0])"
+                cell.extraSpeakers.text = "+\(event.extraSpeaker)"
+            }
+            else {
+                cell.speakerName.text = "\(names[0]) \(names[1].prefix(1))."//event.speaker
+                cell.extraSpeakers.text = "+\(event.extraSpeaker)"
+            }
         }
         
         cell.index = indexPath.row
@@ -115,7 +137,7 @@ extension CellController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToDetails", sender: keynotes[indexPath.row])
+        performSegue(withIdentifier: "goToDetails", sender: eventData.sessions[indexPath.section].keynotes[indexPath.row])//keynotes[indexPath.row])
     }
 }
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Nano Challenge WWDC Redesigned/Controller/CellController.swift"
-            timestampString = "576531056.949178"
+            timestampString = "576547181.0318609"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "CellController"
             landmarkType = "21">
          </BreakpointContent>
