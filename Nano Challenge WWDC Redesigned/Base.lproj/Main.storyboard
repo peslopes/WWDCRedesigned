@@ -32,7 +32,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Nano_Challenge_WWDC_Redesigned" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVe-s5-Irn">
@@ -62,17 +62,11 @@
             <objects>
                 <viewController title="Sessions" id="AYX-oF-vHP" customClass="CellController" customModule="Nano_Challenge_WWDC_Redesigned" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ofs-ba-VP2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSx-On-kzz">
-                                <rect key="frame" x="16" y="4" width="390" height="41"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oru-kh-eF4">
-                                <rect key="frame" x="16" y="62" width="382" height="663"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oru-kh-eF4">
+                                <rect key="frame" x="16" y="16" width="382" height="657"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -222,16 +216,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dSx-On-kzz" firstAttribute="top" secondItem="1HR-ph-j7Z" secondAttribute="top" constant="4" id="0bX-db-RVi"/>
                             <constraint firstItem="1HR-ph-j7Z" firstAttribute="trailing" secondItem="Oru-kh-eF4" secondAttribute="trailing" constant="16" id="0yl-dX-Yh7"/>
-                            <constraint firstItem="dSx-On-kzz" firstAttribute="leading" secondItem="1HR-ph-j7Z" secondAttribute="leading" constant="16" id="8bV-jY-xLQ"/>
-                            <constraint firstItem="1HR-ph-j7Z" firstAttribute="trailing" secondItem="dSx-On-kzz" secondAttribute="trailing" constant="8" id="GU0-Za-Lc1"/>
-                            <constraint firstItem="Oru-kh-eF4" firstAttribute="top" secondItem="dSx-On-kzz" secondAttribute="bottom" constant="17" id="Smy-0H-hyI"/>
+                            <constraint firstItem="Oru-kh-eF4" firstAttribute="top" secondItem="1HR-ph-j7Z" secondAttribute="top" constant="16" id="3QS-Lf-m5O"/>
                             <constraint firstItem="1HR-ph-j7Z" firstAttribute="bottom" secondItem="Oru-kh-eF4" secondAttribute="bottom" id="Wy1-Q0-MAU"/>
                             <constraint firstItem="Oru-kh-eF4" firstAttribute="leading" secondItem="1HR-ph-j7Z" secondAttribute="leading" constant="16" id="zaE-q2-jaC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1HR-ph-j7Z"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Sessions" largeTitleDisplayMode="always" id="XYs-nA-wOG"/>
                     <connections>
                         <outlet property="tableView" destination="Oru-kh-eF4" id="L6J-2i-ge7"/>
                         <segue destination="Yoa-jK-Awe" kind="show" identifier="goToDetails" id="kti-02-9m2"/>
@@ -247,8 +239,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wom-hS-BhD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Ku7-Ge-slg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" shadowImage="nill" id="qo6-I9-xQu">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" shadowImage="nill" largeTitles="YES" id="qo6-I9-xQu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.93725490196078431" green="0.36862745098039218" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -284,7 +276,7 @@
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="-559.15178571428567"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Title-->
         <scene sceneID="ehG-Iy-sJ6">
             <objects>
                 <viewController id="Yoa-jK-Awe" customClass="DetailsViewController" customModule="Nano_Challenge_WWDC_Redesigned" customModuleProvider="target" sceneMemberID="viewController">
@@ -715,6 +707,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3o1-J8-6Fo"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="FMa-r3-0bl"/>
                     <connections>
                         <outlet property="tableView" destination="B6y-8u-Bdv" id="a3j-KM-8xr"/>
                     </connections>

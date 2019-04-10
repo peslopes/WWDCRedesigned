@@ -20,8 +20,11 @@ class KeynoteCell: UITableViewCell {
     @IBOutlet weak var sessionNumber: UILabel!
     @IBOutlet weak var trackColor: UIView!
     
+    
+    
     @IBAction func favoritePressed(_ sender: UIButton) {
         let favoriteStatus = delegate?.buttonDidPress(sender, index: index!)
+        sender.showsTouchWhenHighlighted = true
         if favoriteStatus! {
             sender.setBackgroundImage(UIImage(named: "Star Closed"), for: .normal)
         }

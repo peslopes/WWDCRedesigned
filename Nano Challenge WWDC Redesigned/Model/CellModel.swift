@@ -25,6 +25,8 @@ struct Cell {
     let speakerCompany: String
     let speakerDescription: String
     let cellType: CellType
+    let dayOfTheWeek: WeekDay
+    let dayOfTheMonth: Int
 }
 
 enum CellType {
