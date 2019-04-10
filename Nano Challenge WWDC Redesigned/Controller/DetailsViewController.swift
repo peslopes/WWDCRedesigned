@@ -84,10 +84,22 @@ extension DetailsViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             
+            cell.speakerName.text = cellModel.speaker
+            cell.speakerImage.image = UIImage(named: cellModel.image)
+            cell.keynoteTitle.text = cellModel.title
+            cell.trackColor.backgroundColor = trackColor(trackType: cellModel.track)
+            
             return cell
+            
         case .buttonCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell") as? ButtonCell else {
                 return UITableViewCell()
+            }
+            if indexPath.row == 1{
+                cell.optionButton.setTitle(buttonType.watched.description, for: .normal)
+            }
+            else {
+                cell.optionButton.setTitle(buttonType.calendar.description, for: .normal)
             }
             
             return cell
@@ -95,12 +107,18 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? ImageMapCell else {
                 return UITableViewCell()
             }
+            cell.imageMap.image = UIImage(named: cellModel.imageMap)
             
             return cell
+            
         case .aboutSpeakerCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AboutSpeakerCell") as? AboutSpeakerCell else {
                 return UITableViewCell()
             }
+            cell.speakerNameLabel.text = cellModel.speaker
+            cell.speakerImage.image = UIImage(named: cellModel.image)
+            cell.speakerCompanyLabel.text = cellModel.speakerCompany
+            cell.speakerFunctionLabel.text = cellModel.speakerFunction
             
             return cell
         }
