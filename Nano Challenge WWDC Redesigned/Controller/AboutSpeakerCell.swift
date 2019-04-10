@@ -14,11 +14,13 @@ class AboutSpeakerCell: UITableViewCell {
     @IBOutlet weak var speakerFunctionLabel: UILabel!
     @IBOutlet weak var speakerNameLabel: UILabel!
     @IBOutlet weak var speakerImage: UIImageView!
+    @IBOutlet weak var speakerDescription: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

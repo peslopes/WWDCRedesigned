@@ -121,6 +121,7 @@ extension DetailsViewController: UITableViewDataSource {
             cell.speakerImage.image = UIImage(named: cellModel.image)
             cell.speakerCompanyLabel.text = cellModel.speakerCompany
             cell.speakerFunctionLabel.text = cellModel.speakerFunction
+            cell.speakerDescription.text = cellModel.speakerDescription
             
             return cell
         }

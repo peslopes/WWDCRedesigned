@@ -695,6 +695,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="speakerCompanyLabel" destination="W3N-sj-4Bi" id="opy-EP-Fmw"/>
+                                            <outlet property="speakerDescription" destination="KeI-hh-Ya3" id="NbB-BH-MjN"/>
                                             <outlet property="speakerFunctionLabel" destination="2TW-Pg-S7F" id="7TL-Cn-HMu"/>
                                             <outlet property="speakerImage" destination="Ldw-Ce-kfz" id="yBg-qQ-U6O"/>
                                             <outlet property="speakerNameLabel" destination="1dT-Nm-DlJ" id="AOC-oM-Ex1"/>
