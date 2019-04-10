@@ -86,10 +86,13 @@ extension DetailsViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             
+            
+            
             cell.speakerName.text = cellModel.speaker
             cell.speakerImage.image = UIImage(named: cellModel.image)
             cell.keynoteTitle.text = cellModel.title
             cell.trackColor.backgroundColor = trackColor(trackType: cellModel.track)
+            cell.relatedTimeAndPlace.text = "\(cellModel.dayOfTheWeek), \(cellModel.startingTime.prefix(2)):\(cellModel.startingTime.suffix(2))"
             
             return cell
             

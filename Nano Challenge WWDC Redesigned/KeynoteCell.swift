@@ -20,6 +20,7 @@ class KeynoteCell: UITableViewCell {
     @IBOutlet weak var sessionNumber: UILabel!
     @IBOutlet weak var trackColor: UIView!
     
+    @IBOutlet weak var relatedTimeAndPlace: UILabel!
     
     
     @IBAction func favoritePressed(_ sender: UIButton) {
